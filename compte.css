@@ -1,0 +1,40 @@
+.text {
+	font-size:1rem;
+	font-family: cursive !important;
+	color: white;
+}
+
+.fond {
+	background-color:#25472E !important;
+}
+
+.fond2 {
+	background-color:#376D35 !important;
+}
+
+.nav {
+	background-color:#25472E;
+	color: #FFB34F;
+	font-family: cursive;
+	padding:0.625rem 1.25rem;
+}
+
+p {
+   text-decoration: underline;
+}
+
+.bouton {
+	text-align: center;
+	color: white !important;
+	background-color:#FFB34F !important;
+	font-family: cursive;
+}
+
+.textTitle {
+	font-size: 2rem;
+	font-family: cursive;
+}
+
+.spanText {
+	background-color:orange;
+}

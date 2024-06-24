@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="fr">
+
+<head>
+  <title>Connexion</title>
+
+  <!-- Feuilles de style -->
+  <link rel="stylesheet" href="nicepage.css" media="screen">
+  <link rel="stylesheet" href="Connexion.css" media="screen">
+
+  <!-- Scripts JavaScript -->
+  <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+  
+  <?php
+	include 'head.html';
+  ?>
+</head>
+
+<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="fr">
+  
+  <!-- Inclusion du fichier d'en-tête -->
+  <?php 
+    include 'header.php';
+  ?>
+  
+  <!-- Section de connexion -->
+<div class="">
+  <section class="fondConnexion u-clearfix u-image u-section-1 text" id="" data-image-width="2048" data-image-height="1388">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1 fondConnexion">
+      <div class="custom-expanded u-clearfix u-custom-html u-custom-html-1">
+        <!-- Formulaire de connexion -->
+        <form action="traitement_connexion.php" method="post">
+          <font align="center">
+            <p> Identifiant: <input class="form-control" type="text" id="nom_identifiant" name="nom_identifiant" required></p>
+            <p> Mot de passe: <input class="form-control" type="password" id="mot_de_passe" name="mot_de_passe" required></p>
+            <p><button class="btn bouton" type="submit">Connexion</button></p>
+            <p><a href="FormulaireInscription.html" class="text2">Créer un compte</a></p>
+            <p><a href="formulaireMotDePasseOublie.html" class="text2">Mot de passe oublié ?</a></p>
+          </font>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+  <?php
+	include 'footer.php';
+?>
+
+</body>
+</html>

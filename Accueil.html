@@ -1,0 +1,158 @@
+<?php
+  session_start(); // Démarrage de la session
+?>
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="fr">
+
+<head>
+  <title>Accueil</title>
+  <!-- Inclusion des feuilles de style -->
+  <link rel="stylesheet" href="nicepage.css" media="screen">
+  <link rel="stylesheet" href="Accueil.css" media="screen">
+  
+  <?php
+	include 'head.html';
+  ?>
+</head>
+
+<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="fr">
+
+<!-- Inclusion du fichier header.php -->
+<?php
+	include 'header.php'; // Inclure le fichier header.php
+?>
+
+<!-- Barre de navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <!-- Bouton de bascule pour la navigation -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Liens vers différentes pages -->
+                <li class="nav-item">
+                    <a class="nav-link" href="Recette.html">Recette Gourmande</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="plat.html">Recette de Plats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="espace_commentaire.html">Espace commentaire</a>
+                </li>
+            </ul>
+            <!-- Formulaire de recherche -->
+            <form class="d-flex" method="post" action="">
+                <input class="form-control me-2" type="search" name="search" placeholder="Rechercher une recette ou un utilisateur"
+                    aria-label="Rechercher">
+                <button class="btn btn-outline-primary" type="submit">Rechercher</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<?php
+// Inclusion du fichier de connexion à la base de données
+include 'connexion_base_de_donnée.php';
+
+// Récupération des recettes depuis la base de données
+$sql = "SELECT * FROM page_recette";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $modalCount = 0; // Initialisation du compteur de modals
+    while ($row = $result->fetch_assoc()) {
+        // Nettoyer le titre pour l'URL en remplaçant les espaces par des _
+        $url_titre = str_replace(' ', '_', $row['titre']);
+        echo "<main>";
+        // Affichage de la carte de recette
+        echo <<<EOD
+        <div class="row">
+            <div class="col-md-12 border">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Recette créée par l'utilisateur {$row['nom_identifiant']}</h5>
+                        <p class="card-text">Voici une {$row['titre']}</p>
+
+                        <div class="container mt-4">
+                            <!-- Bouton pour ouvrir la modale -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#recetteModal{$modalCount}">Voir la recette</button>   
+                            <!-- Formulaire pour ajouter aux favoris -->
+                            <form method="post" action="ajouter_favoris.php">
+                                <input type="hidden" name="recette_id" value="{$row['id_recette']}">
+                                <button type="submit" class="btn btn-success">Ajouter aux favoris</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+EOD;
+        echo "</main>";
+        // Affichage de la modal de recette
+		echo <<<EOD
+		<div class="modal fade" id="recetteModal{$modalCount}" tabindex="-1" role="dialog" aria-labelledby="recetteModalLabel{$modalCount}" aria-hidden="true">
+		    <div class="modal-dialog modal-xl" role="document">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <h5 class="modal-title">"{$row['titre']}" créée par l'utilisateur {$row['nom_identifiant']}</h5>
+		                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                    <span aria-hidden="true">&times;</span>
+		                </button>
+		            </div>
+		            <div class="modal-body">
+		                <p><iframe src='{$url_titre}' width='100%' height='600'></iframe></p>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+EOD;
+        $modalCount++; // Incrémentation du compteur de modals
+    }
+} else {
+    echo "Aucune recette utilisateur";
+}
+?>
+
+<?php
+// Vérification si le formulaire de recherche a été soumis
+if(isset($_POST['search'])) {
+    // Récupération du terme de recherche
+    $search = $_POST['search'];
+
+    // Requête SQL pour rechercher une recette par titre ou nom d'utilisateur
+    $sql = "SELECT * FROM page_recette WHERE titre LIKE '%$search%' OR nom_identifiant LIKE '%$search%'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // Affichage des résultats de la recherche
+        while ($row = $result->fetch_assoc()) {
+            // Nettoyer le titre pour l'URL en remplaçant les espaces par des _
+            $url_titre = str_replace(' ', '_', $row['titre']);
+            echo "<div>";
+            echo "<h3>Recette: {$row['titre']}</h3>";
+            echo "<p>Créée par l'utilisateur: {$row['nom_identifiant']}</p>";
+            echo "<a href='{$url_titre}' class='btn btn-primary'>Voir la recette</a>";
+            echo "<form method='post' action='ajouter_favoris.php'>
+                <input type='hidden' name='recette_id' value='{$row['id_recette']}'>
+                <button type='submit' class='btn btn-success'>Ajouter aux favoris</button>
+            </form>";
+            echo "</div>";
+        }
+    } else {
+        // Aucun résultat trouvé
+        echo "Aucune recette trouvée.";
+    }
+}
+?>
+
+<?php
+	include 'footer.php';
+?>
+  
+</body>
+</html>

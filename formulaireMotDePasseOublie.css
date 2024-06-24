@@ -1,0 +1,11 @@
+.text {
+	font-size:1rem;
+	font-family: cursive !important;
+	color: white;
+	background-position: 78.5% 0.04%;
+    background-size: 400%;
+}
+
+.fond {
+	background-color: #376D35 !important;
+}

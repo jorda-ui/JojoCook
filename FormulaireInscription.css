@@ -1,0 +1,70 @@
+ .u-section-1 {
+  background-position: 100% 0%;
+  background-size: 335%;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 311px;
+}
+
+.u-section-1 .u-custom-html-1 {
+  height: auto;
+  min-height: 291px;
+  width: 749px;
+  margin: 20px auto 0;
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-custom-html-1 {
+    width: 720px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 295px;
+  }
+
+  .u-section-1 .u-custom-html-1 {
+    width: 540px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 190px;
+  }
+
+  .u-section-1 .u-custom-html-1 {
+    width: 340px;
+  }
+}
+
+.text {
+	font-size:1rem;
+	font-family: cursive !important;
+	color: white;
+	background-position: 78.5% 0.04%;
+    background-size: 400%;
+}
+
+.textTitle {
+	color: #FFB34F;
+	font-family: cursive !important;
+	text-align:center;
+}	
+
+.fond {
+	background-color: #376D35 !important;
+}
+
+.bouton {
+	text-align: center;
+	color: white !important;
+	background-color:#FFB34F !important;
+	font-family: cursive;
+}
+
+.tdBouton {
+	text-align: center;
+}

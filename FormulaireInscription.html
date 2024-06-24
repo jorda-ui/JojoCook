@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="fr">
+
+<head>
+  <title>FormulaireInscription</title>
+  <!-- Feuilles de style -->
+  <link rel="stylesheet" href="nicepage.css" media="screen">
+  <link rel="stylesheet" href="FormulaireInscription.css" media="screen">
+
+   <?php
+   include 'head.html';
+   ?>
+</head>
+
+<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="fr">
+  <?php 
+  // Inclure l'en-tête
+  include 'header.php';
+  ?>
+  <!-- Section du formulaire d'inscription -->
+  <section class="u-clearfix u-image u-section-1 fond" id="sec-a58f" data-image-width="2048" data-image-height="1388">
+    <div class="u-clearfix u-sheet u-valign-bottom u-sheet-1">
+      <div class="custom-expanded u-clearfix u-custom-html u-custom-html-1">
+        <form method="POST" action="RemplirBase.php">
+          <p id="titre" class="textTitle"><b><u>Remplissez le formulaire suivant:</u></b>
+          </p>
+          <p></p>
+          <!-- Tableau du formulaire -->
+          <table border="0" width="400" align="center">
+            <tbody>
+              <tr>
+                <td width="200" class="text"><b>Nom</b>
+                </td>
+                <td width="200">
+                  <input class="form-control" type="text" name="nom" placeholder="Owczarczak" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ]+">
+                </td>
+              </tr>
+              <tr>
+                <td width="200" class="text"><b>Prénom</b>
+                </td>
+                <td width="200">
+                  <input class="form-control" type="text" name="prenom" placeholder="Jordan" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ]+">
+                </td>
+              </tr>
+              <tr>
+                <td width="200" class="text"><b>Age</b>
+                </td>
+                <td width="200">
+                  <input class="form-control" type="number" name="age" min="0" max="120" placeholder="30" />
+                </td>
+              </tr>
+              <tr>
+                <td width="200" class="text"><b>Date de naissance</b></td>
+                <td width="200">
+                  <input class="form-control" type="date" name="date_de_naissance" placeholder="YYYY-MM-DD" required>
+                </td>
+              </tr>
+              <tr>
+                <td width="200" class="text"><b>Adresse</b></td>
+                <td width="200">
+                  <input class="form-control" type="text" name="adresse" placeholder="45 rue albert Letoret" required>
+                </td>
+              </tr>
+              <tr>
+                <td width="200" class="text"><b>Ville</b></td>
+                <td width="200">
+                  <input class="form-control" type="text" name="ville" placeholder="Hirson" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ]+">
+                </td>
+              </tr>
+              <tr>
+                <td width="200" class="text"><b>Code postal</b></td>
+                <td width="200">
+                  <input class="form-control" type="text" name="code_postal" placeholder="02500" max="5" required>
+                </td>
+              </tr>
+              <tr>
+                <td width="200" class="text"><b>Mail</b>
+                </td>
+                <td width="200">
+                  <input class="form-control" type="text" name="mail" placeholder="Owczarczak.jordan@gmail.com" required="">
+                </td>
+              </tr>
+
+              <tr>
+                <td width="200" class="text"><b>Identifiant</b>
+                </td>
+                <td width="200">
+                  <input class="form-control" type="text" name="nom_utilisateur" placeholder="test" required="">
+                </td>
+              </tr>
+              <tr>
+                <td width="200"class="text"><b>Mot de passe</b>
+                </td>
+                <td width="200">
+                  <input class="form-control" type="password" name="mot_de_passe" placeholder="gg@0289.fr" required="">
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" class="tdBouton">
+				  <button class="btn bouton" type="submit" name="submit">Envoyer</button>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" class="tdBouton">
+				  <button class="btn bouton" type="reset">Réinitialiser le formulaire d'inscription</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <?php
+	include 'footer.php';
+?>
+</body>
+</html>

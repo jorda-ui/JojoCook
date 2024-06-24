@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="fr">
+
+<head>
+  <title>Contact</title>
+
+  <!-- Feuilles de style -->
+  <link rel="stylesheet" href="nicepage.css" media="screen">
+  <link rel="stylesheet" href="Contact.css" media="screen">
+
+	<?php
+	include 'head.html';
+  ?>
+</head>
+
+<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="fr">
+  <?php 
+  include 'header.php';
+  ?>
+  
+  <!-- Section de contact -->
+  <section class="u-align-center u-black u-clearfix u-section-1 text" id="carousel_481e">
+    <img class="u-expanded-width u-image u-image-1" src="images/wdq-min.jpg">
+    <!-- Liste des informations de contact -->
+    <div class="u-list u-list-1">
+      <div class="u-repeater u-repeater-1">
+        <!-- Adresse -->
+        <div class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-1">
+          <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+            <span class="u-file-icon u-icon u-text-palette-3-base u-icon-1"><img src="images/535239-2d574ec6.png" alt=""></span>
+            <h5 class="u-text u-text-1">Notre Bureau Principal</h5>
+            <p class="u-text u-text-2">Campus Mont Houy, 59313 Valencienne</p>
+          </div>
+        </div>
+        <!-- Numéro de téléphone -->
+        <div class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-2">
+          <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
+            <span class="u-file-icon u-icon u-text-palette-3-base u-icon-2"><img src="images/159832-567d05bb.png" alt=""></span>
+            <h5 class="u-text u-text-3">Numero de telephone</h5>
+            <p class="u-text u-text-4">03-24-25-26-27</p>
+          </div>
+        </div>
+        <!-- Fax -->
+        <div class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-3">
+          <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
+            <span class="u-file-icon u-icon u-text-palette-3-base u-icon-3"><img src="images/953831-ece35f8e.png" alt=""></span>
+            <h5 class="u-text u-text-5">Fax</h5>
+            <p class="u-text u-text-6">03-28-29-30-31</p>
+          </div>
+        </div>
+        <!-- Email -->
+        <div class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-4">
+          <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4">
+            <span class="u-file-icon u-icon u-text-palette-3-base u-icon-4"><img src="images/561127-c0da10bd.png" alt=""></span>
+            <h5 class="u-text u-text-7">Email</h5>
+            <p class="u-text u-text-8">
+              <a href="mailto:hello@theme.com" class="u-active-none u-border-1 u-border-active-black u-border-hover-black u-border-no-left u-border-no-right u-border-no-top u-btn u-button-link u-button-style u-hover-none u-none u-text-active-palette-3-base u-text-hover-palette-3-base u-text-palette-3-base u-btn-1">JojoCook@gmail.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Formulaire de contact -->
+    <div class="data-layout-selected u-clearfix u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
+          <!-- Formulaire à gauche -->
+          <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
+            <div class="u-container-layout u-valign-top u-container-layout-5">
+              <div class="u-form u-form-1">
+                <form action="FormulaireContact.php" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 10px" source="email" name="form">
+                  <!-- Champ email -->
+                  <div class="u-form-email u-form-group u-form-partition-factor-2 u-form-group-1">
+                    <label for="email-319a" class="u-label u-text-body-alt-color u-label-1">Email</label>
+                    <input type="email" placeholder="Enter a valid email address" id="email-319a" name="email" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle u-text-body-alt-color" required="">
+                  </div>
+                  <!-- Champ nom -->
+                  <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-2">
+                    <label for="name-319a" class="u-label u-text-body-alt-color u-label-2">Name</label>
+                    <input type="text" placeholder="Enter your Name" id="name-319a" name="name" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle u-text-body-alt-color" required="">
+                  </div>
+                  <!-- Champ message -->
+                  <div class="u-form-group u-form-message u-form-group-3">
+                    <label for="message-319a" class="u-label u-text-body-alt-color u-label-3">Message</label>
+                    <textarea placeholder="Enter your message" rows="4" cols="50" id="message-319a" name="message" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle u-text-body-alt-color" required=""></textarea>
+                  </div>
+                  <!-- Bouton Envoyer -->
+                  <div class="u-align-left u-form-group u-form-submit u-form-group-4">
+                    <a href="#" class="u-active-white u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-3-base u-text-body-alt-color u-text-hover-palette-3-base u-btn-2">Envoyer</a>
+                    <input type="submit" value="submit" class="u-form-control-hidden">
+                  </div>
+                  <!-- Messages de confirmation -->
+                  <div class="u-form-send-message u-form-send-success"> Merci ! Votre message a été envoyé. </div>
+                  <div class="u-form-send-error u-form-send-message"> Impossible d'envoyer votre message. Veuillez corriger les erreurs, puis réessayez. </div>
+                  <input type="hidden" value="" name="recaptchaResponse">
+                  <input type="hidden" name="formServices" value="680622a7-2abd-7c81-c274-4e9be31d3218">
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- Informations de contact à droite -->
+          <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+            <div class="u-container-layout u-container-layout-6">
+              <h2 class="u-align-left u-text u-text-body-alt-color u-text-default u-text-9">Entrer en contact</h2>
+              <h6 class="u-align-left u-custom-font u-text u-text-body-alt-color u-text-font u-text-10"> JojoCook est
+                fier de proposer gratuitement les meilleurs recette de cuisine en ligne&nbsp;! Parcourez nos recettes de
+                cuisine</h6>
+              <p class="u-align-left u-text u-text-body-alt-color u-text-11"> Pour toute questions, Veuillez remplir le
+                formulaire, nous repondrons au plus vite. Merci</p>
+              <!-- Réseaux sociaux -->
+              <div class="u-social-icons u-spacing-20 u-social-icons-1">
+                <!-- Liens vers les réseaux sociaux -->
+                <a class="u-social-url" target="_blank" href="#"><span class="u-icon u-icon-circle u-social-facebook u-social-icon u-text-palette-3-base u-icon-5"></span></a>
+                <a class="u-social-url" target="_blank" href="#"><span class="u-icon u-icon-circle u-social-twitter u-social-icon u-text-palette-3-base u-icon-6"></span></a>
+                <a class="u-social-url" target="_blank" href="#"><span class="u-icon u-icon-circle u-social-icon u-social-instagram u-text-palette-3-base u-icon-7"></span></a>
+                <a class="u-social-url" target="_blank" href="#"><span class="u-icon u-icon-circle u-social-icon u-social-linkedin u-text-palette-3-base u-icon-8"></span></a>
+				
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <?php
+	include 'footer.php';
+?>
+
+</body>
+</html>

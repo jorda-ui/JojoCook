@@ -1,0 +1,15 @@
+u {
+      color: white;
+    }
+	 /* Style des boutons */
+    button {
+      padding: 3px 8px;
+      font-size: 12px;
+    }
+  .ingredient-item::marker {
+    color: white;
+  }
+  
+  .white-text {
+        color: white;
+    }
